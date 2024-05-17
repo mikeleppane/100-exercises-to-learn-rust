@@ -1,7 +1,3 @@
-// TODO: Add &mut-setters to the `Ticket` struct for each of its fields.
-//   Make sure to enforce the same validation rules you have in `Ticket::new`!
-//   Even better, extract that logic into private methods and reuse it in both places.
-
 pub struct Ticket {
     title: String,
     description: String,
@@ -33,16 +29,46 @@ impl Ticket {
         }
     }
 
-    pub fn title(&self) -> &String {
+    pub fn title(&self) -> &str {
         &self.title
     }
 
-    pub fn description(&self) -> &String {
+    pub fn description(&self) -> &str {
         &self.description
     }
 
-    pub fn status(&self) -> &String {
+    pub fn status(&self) -> &str {
         &self.status
+    }
+
+    pub fn set_title(&mut self, title: String) {
+        if title.is_empty() {
+            panic!("Title cannot be empty");
+        }
+        if title.len() > 50 {
+            panic!("Title cannot be longer than 50 characters");
+        }
+
+        self.title = title;
+    }
+
+    pub fn set_description(&mut self, description: String) {
+        if description.is_empty() {
+            panic!("Description cannot be empty");
+        }
+        if description.len() > 500 {
+            panic!("Description cannot be longer than 500 characters");
+        }
+
+        self.description = description;
+    }
+
+    pub fn set_status(&mut self, status: String) {
+        if status != "To-Do" && status != "In Progress" && status != "Done" {
+            panic!("Only `To-Do`, `In Progress`, and `Done` statuses are allowed");
+        }
+
+        self.status = status;
     }
 }
 
