@@ -1,7 +1,27 @@
-// TODO: Flesh out the `WeekTemperatures` struct and its method implementations to pass the tests.
-
 pub struct WeekTemperatures {
-    // TODO
+    temperatures: [Option<i32>; 7],
+}
+
+impl Default for WeekTemperatures {
+    fn default() -> Self {
+        Self {
+            temperatures: [None; 7],
+        }
+    }
+}
+
+impl WeekTemperatures {
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    pub fn get_temperature(&self, day: Weekday) -> Option<i32> {
+        self.temperatures[day as usize]
+    }
+
+    pub fn set_temperature(&mut self, day: Weekday, temperature: i32) {
+        self.temperatures[day as usize] = Some(temperature);
+    }
 }
 
 pub enum Weekday {
@@ -12,20 +32,6 @@ pub enum Weekday {
     Friday,
     Saturday,
     Sunday,
-}
-
-impl WeekTemperatures {
-    pub fn new() -> Self {
-        todo!()
-    }
-
-    pub fn get_temperature(&self, day: Weekday) -> Option<i32> {
-        todo!()
-    }
-
-    pub fn set_temperature(&mut self, day: Weekday, temperature: i32) {
-        todo!()
-    }
 }
 
 #[cfg(test)]
