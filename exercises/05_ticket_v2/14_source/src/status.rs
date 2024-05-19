@@ -5,6 +5,19 @@ pub enum Status {
     Done,
 }
 
+impl Status {
+    pub fn from_str(value: &str) -> Result<Self, ParseStatusError> {
+        match value.to_lowercase().as_str() {
+            "todo" => Ok(Status::ToDo),
+            "inprogress" => Ok(Status::InProgress),
+            "done" => Ok(Status::Done),
+            _ => Err(ParseStatusError {
+                invalid_status: value.to_string(),
+            }),
+        }
+    }
+}
+
 impl TryFrom<String> for Status {
     type Error = ParseStatusError;
 

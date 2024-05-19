@@ -1,3 +1,5 @@
+use std::error::Error;
+
 use crate::status::Status;
 
 // We've seen how to declare modules in one of the earliest exercises, but
@@ -24,6 +26,15 @@ pub enum TicketNewError {
     ParseStatusError(String),
 }
 
+impl TicketNewError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        match self {
+            TicketNewError::ParseStatusError(_) => Some(self),
+            _ => None,
+        }
+    }
+}
+
 #[derive(Debug, PartialEq, Clone)]
 pub struct Ticket {
     title: String,
@@ -47,7 +58,7 @@ impl Ticket {
         }
 
         let status =
-            Status::from_str(&status).map_err(|_| TicketNewError::ParseStatusError(status))?;
+            Status::from_str(&status).map_err(|e| TicketNewError::ParseStatusError(status))?;
 
         Ok(Ticket {
             title,

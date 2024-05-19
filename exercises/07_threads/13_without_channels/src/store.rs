@@ -6,7 +6,7 @@ use crate::data::{Status, Ticket, TicketDraft};
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct TicketId(u64);
 
-#[derive(Clone)]
+#[derive(Clone, Default)]
 pub struct TicketStore {
     tickets: BTreeMap<TicketId, Arc<RwLock<Ticket>>>,
     counter: u64,
