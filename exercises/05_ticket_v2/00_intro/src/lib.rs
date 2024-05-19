@@ -1,5 +1,7 @@
+#![allow(dead_code)]
+
 fn intro() -> &'static str {
-    "I'm ready to __!"
+    "I'm ready to refine the `Ticket` type!"
 }
 
 #[cfg(test)]

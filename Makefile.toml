@@ -1,3 +1,6 @@
+[config]
+default_to_workspace = false
+
 [tasks.format]
 install_crate = "rustfmt"
 command = "cargo"
@@ -6,16 +9,13 @@ args = ["fmt", "--", "--emit=files"]
 [tasks.qa]
 script = [
     "echo \"Running cargo check\"",
-    "cargo check -q --all-features --target-dir=benches",
-    "cargo check -q --all-features --target-dir=key_value_store",
+    "cargo check ",
     "echo \"Running cargo fmt\"",
-    "cargo fmt --manifest-path=key_value_store/Cargo.toml -- --check",
-    "cargo fmt -- --check benches/benchmark.rs",
+    "cargo fmt -- --check",
     "echo \"Running cargo clippy\"",
-    "cargo clippy --manifest-path=key_value_store/Cargo.toml -- -D warnings",
     "cargo clippy -- -D warnings",
     "echo \"Running cargo test\"",
-    "cargo test --manifest-path key_value_store/Cargo.toml",
+    "cargo test",
 ]
 
 [tasks.clean]

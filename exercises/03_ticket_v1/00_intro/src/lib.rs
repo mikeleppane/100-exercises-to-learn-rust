@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn intro() -> &'static str {
     "I'm ready to start modelling a software ticket!"
 }

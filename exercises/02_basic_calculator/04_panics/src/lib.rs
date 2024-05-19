@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 /// Given the start and end points of a journey, and the time it took to complete the journey,
 /// calculate the average speed of the journey.
 fn speed(start: u32, end: u32, time_elapsed: u32) -> u32 {

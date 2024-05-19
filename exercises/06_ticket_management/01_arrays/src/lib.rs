@@ -1,13 +1,6 @@
+#[derive(Debug, Default)]
 pub struct WeekTemperatures {
     temperatures: [Option<i32>; 7],
-}
-
-impl Default for WeekTemperatures {
-    fn default() -> Self {
-        Self {
-            temperatures: [None; 7],
-        }
-    }
 }
 
 impl WeekTemperatures {

@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 #[derive(PartialEq, Debug)]
 struct Ticket {
     title: String,

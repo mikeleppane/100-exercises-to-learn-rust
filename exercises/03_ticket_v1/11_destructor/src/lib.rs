@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn outro() -> &'static str {
     "I have a basic understanding of destructors!"
 }

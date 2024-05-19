@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
     let description = if description.is_empty() || description.len() > 500 {
         "Description not provided".to_string()

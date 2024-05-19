@@ -1,8 +1,4 @@
-// TODO: Given a vector of integers, split it in two halves
-//  and compute the sum of each half in a separate thread using scoped threads.
-//  Don't perform any heap allocation. Don't leak any memory.
-
-use std::os::unix::thread;
+#![allow(dead_code)]
 
 pub fn sum(v: Vec<i32>) -> i32 {
     let mid = v.len() / 2;

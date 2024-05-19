@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 struct Ticket {
     title: String,
     description: String,

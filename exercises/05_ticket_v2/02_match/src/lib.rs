@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 enum Shape {
     Circle,
     Square,

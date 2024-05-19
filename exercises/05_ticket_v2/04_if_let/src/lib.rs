@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 enum Shape {
     Circle { radius: f64 },
     Square { border: f64 },

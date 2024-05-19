@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::error::Error;
 
 use crate::status::Status;
@@ -58,7 +60,7 @@ impl Ticket {
         }
 
         let status =
-            Status::from_str(&status).map_err(|e| TicketNewError::ParseStatusError(status))?;
+            Status::from_str(&status).map_err(|_| TicketNewError::ParseStatusError(status))?;
 
         Ok(Ticket {
             title,

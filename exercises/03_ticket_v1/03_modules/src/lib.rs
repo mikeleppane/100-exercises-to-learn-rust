@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 mod helpers {
     use super::*;
     fn create_todo_ticket(title: String, description: String) -> Ticket {

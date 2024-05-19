@@ -15,6 +15,8 @@
 //
 // If you get stuck for more than 10 minutes on an exercise, grab a trainer! We're here to help!
 // You can also find solutions to all exercises in the `solutions` git branch.
+#![allow(dead_code)]
+
 fn greeting() -> &'static str {
     "I'm ready to learn Rust!"
 }

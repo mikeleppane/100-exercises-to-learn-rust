@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 /// Return `true` if `n` is even, `false` otherwise.
 fn is_even(n: u32) -> bool {
     n % 2 == 0

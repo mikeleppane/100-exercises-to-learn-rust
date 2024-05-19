@@ -40,7 +40,7 @@ pub fn launch() -> TicketStoreClient {
 }
 
 // No longer public! This becomes an internal detail of the library now.
-enum Command {
+pub enum Command {
     Insert {
         draft: TicketDraft,
         response_channel: Sender<TicketId>,
