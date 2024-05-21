@@ -73,7 +73,6 @@ impl Ticket {
 #[cfg(test)]
 mod tests {
     use common::{valid_description, valid_title};
-    use std::error::Error;
 
     use super::*;
 

@@ -110,7 +110,7 @@ mod tests {
 
         let n_tickets = 5;
 
-        for i in 0..n_tickets {
+        for _ in 0..n_tickets {
             let draft = TicketDraft {
                 title: ticket_title(),
                 description: ticket_description(),

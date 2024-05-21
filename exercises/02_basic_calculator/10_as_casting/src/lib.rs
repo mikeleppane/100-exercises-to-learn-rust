@@ -9,7 +9,7 @@ mod tests {
     #[test]
     #[allow(overflowing_literals)]
     fn u8_to_i8() {
-        assert_eq!(255 as i8, -1);
+        assert_eq!(255_i8, -1);
     }
 
     #[test]
